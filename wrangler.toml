@@ -1,0 +1,22 @@
+name = "warnet-control-plane"
+main = "src/index.ts"
+compatibility_date = "2024-09-23"
+compatibility_flags = ["nodejs_compat"]
+
+[[r2_buckets]]
+binding = "GHOST_R2"
+bucket_name = "warnet-ghost-store"
+
+[[d1_databases]]
+binding = "GHOST_D1"
+database_name = "warnet-control-plane"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+
+[vars]
+WORKERS_AI_QUOTA_USED = "0"
+PG_STORAGE_BYTES_USED = "0"
+
+# Secrets (never committed — set via `wrangler secret put <NAME>`):
+#   GHOST_ENCRYPTION_KEY
+#   SUPABASE_URL
+#   SUPABASE_SERVICE_ROLE_KEY
